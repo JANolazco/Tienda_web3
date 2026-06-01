@@ -5,5 +5,5 @@ from .models import ListaProducto
 class UserSerializersProd(ModelSerializer):
     class Meta:
         model= ListaProducto
-        fields=['id','nombre','descripcion','precio']
+        fields=['id','nombre','descripcion','precio','cantidad','fecha_de_registro']
         

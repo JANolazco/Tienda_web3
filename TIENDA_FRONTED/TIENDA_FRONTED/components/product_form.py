@@ -15,3 +15,22 @@ def modal_producto():
         ),
         open=State.modal_abierto,
     )
+
+def dialogo_eliminar():
+    return rx.alert_dialog.root(
+        rx.alert_dialog.content(
+            rx.alert_dialog.title("Eliminar Producto"),
+            rx.alert_dialog.description(
+                rx.cond(
+                    State.producto_a_eliminar,
+                    rx.text(f"¿Estás seguro que deseas eliminar '{State.producto_a_eliminar['nombre']}'?"),
+                    rx.text("Cargando...")
+                )
+            ),
+            rx.hstack(
+                rx.alert_dialog.cancel(rx.button("Cancelar")),
+                rx.alert_dialog.action(rx.button("Eliminar", color_scheme="red", on_click=State.eliminar_producto_confirmado)),
+            ),
+        ),
+        open=State.dialogo_eliminar_abierto,
+    )

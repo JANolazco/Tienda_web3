@@ -1,0 +1,4 @@
+cd /home/lila/Escritorio/R/Tienda.worktrees/agents-profitable-skink/BACKEND && python3 -m venv venv && source venv/bin/activate && pip install -r requirements.txt
+cd /home/lila/Escritorio/R/Tienda.worktrees/agents-profitable-skink/TIENDA_FRONTED && python3 -m venv venv && source venv/bin/activate && pip install -r requirements.txt
+cd /home/lila/Escritorio/R/Tienda.worktrees/agents-profitable-skink/TIENDA_FRONTED && source venv/bin/activate && reflex run
+cd /home/lila/Escritorio/R/Tienda.worktrees/agents-profitable-skink/BACKEND && source venv/bin/activate && python manage.py runserver 0.0.0.0:8000

@@ -8,8 +8,7 @@ def row_producto(producto: dict):
         rx.table.cell(
             rx.hstack(
                 rx.button(rx.icon("pencil"), on_click=lambda: State.abrir_modal_editar(producto), size="1"),
-                rx.button(rx.icon("trash"), on_click=lambda: State.set_producto_a_eliminar(producto), 
-                          on_click_post=State.set_dialogo_eliminar_abierto(True), color_scheme="red", size="1"),
+                rx.button(rx.icon("trash"), on_click=lambda: [State.set_producto_a_eliminar(producto), State.set_dialogo_eliminar_abierto(True)], color_scheme="red", size="1"),
             )
         )
     )

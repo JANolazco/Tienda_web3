@@ -33,6 +33,9 @@ class State(rx.State):
     def set_form_descripcion(self, value: str): self.form_descripcion = value
     def set_form_precio(self, value: str): self.form_precio = value
 
+    def set_producto_a_eliminar(self, producto: dict): self.producto_a_eliminar = producto
+    def set_dialogo_eliminar_abierto(self, abierto: bool): self.dialogo_eliminar_abierto = abierto
+
     async def cargar_productos(self, pagina: int = 1):
         self.cargando = True
         self.toast_visible = False

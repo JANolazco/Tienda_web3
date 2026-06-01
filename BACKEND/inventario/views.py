@@ -47,7 +47,8 @@ class TiendaApiViewsDetail(APIView):
     #utilizo para borrar por el id
     def delete(self,request,id):
         producto=self.get_object(id)
+        if producto is None:
+            return Response(status=status.HTTP_404_NOT_FOUND, data={'error':'Producto no encontrado'})
         producto.delete()
-        response={'delete': True}
-        return Response(status=status.HTTP_200_OK, data=response)            
+        return Response(status=status.HTTP_204_NO_CONTENT)            
     
