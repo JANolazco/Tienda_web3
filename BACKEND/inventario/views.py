@@ -30,14 +30,16 @@ class TiendaApiViewsDetail(APIView):
     #lo  utilizo para consultar por el ID
     def get(self,request,id):
         post= self.get_object(id)
+        if post is None:
+            return Response(status=status.HTTP_404_NOT_FOUND, data={'error':'Producto no encontrado'})
         serial=UserSerializersProd(post)
         return Response(status=status.HTTP_200_OK, data=serial.data)
     
     #utilizo para actualizar por el id
     def put(self,request,id):
         post=self.get_object(id)
-        if(post==None):
-            return Response(status=status.HTTP_200_OK, data={'error':'Not found data'})
+        if post is None:
+            return Response(status=status.HTTP_404_NOT_FOUND, data={'error':'Producto no encontrado'})
         serial=UserSerializersProd(post, data=request.data)
         if serial.is_valid():
             serial.save()
