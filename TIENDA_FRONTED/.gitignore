@@ -4,3 +4,6 @@ assets/external/
 .states
 .web
 *.db
+venv/
+.venv/
+env/

@@ -1,0 +1,49 @@
+# Entornos virtuales
+venv/
+.venv/
+env/
+ENV/
+
+# Variables de entorno
+.env
+.env.local
+.env.*.local
+
+# Base de datos
+*.sqlite3
+*.db
+db.sqlite3
+db.sqlite3-journal
+
+# Cache y compilados
+__pycache__/
+*.py[cod]
+*.pyc
+.pytest_cache/
+.coverage
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Reflex
+.web/
+.states/
+*.db
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Builds
+build/
+dist/
+*.egg-info/
